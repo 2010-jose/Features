@@ -1,6 +1,7 @@
 import random
 import time
 
+
 def random_number():
     interval = int(input("Escolha um número: ")) + 1
 
@@ -17,6 +18,7 @@ def random_number():
         home()
     elif now_choice1 == "2":
         random_number()
+
 
 def random_password():
     my_length = int(input("Insira o tamanho da senha randômica: "))
@@ -37,6 +39,7 @@ def random_password():
         home()
     elif now_choice2 == "2":
         random_password()
+
 
 def clock():
     try:
@@ -61,6 +64,7 @@ def clock():
         elif now_choice3 == "2":
             clock()
 
+
 def simple_calc():
     print(eval(input("Digite uma expressão numérica a ser resolvida: ")))
 
@@ -71,6 +75,7 @@ def simple_calc():
         home()
     elif now_choice4 == "2":
         simple_calc()
+
 
 def percent_calc():
     quant = int(input("Quantos números você quer inserir? "))
@@ -96,6 +101,7 @@ def percent_calc():
     elif now_choice5 == "2":
         percent_calc()
 
+
 def home():
     print("1- Sorteador de número")
     print("2- Gerador de senha")
@@ -104,22 +110,24 @@ def home():
     print("5- Calculadora de porcentagem")
     print("6- Desligar sistema")
 
-    home_choice = input("Qual software deseja acessar? (1, 2, 3, 4, 5 ou 6) ")
+    home_choice = input("Qual software deseja acessar? (1, 2, 3, 4, 5, ou 6) ")
 
-    if home_choice == "1":
-        random_number()
-    elif home_choice == "2":
-        random_password()
-    elif home_choice == "3":
-        clock()
-    elif home_choice == "4":
-        simple_calc()
-    elif home_choice == "5":
-        percent_calc()
-    elif home_choice == "6":
-        print(">>> Desligando o sistema <<<")
-        time.sleep(3)
-        exit()
+    match home_choice:
+        case "1":
+            random_number()
+        case "2":
+            random_password()
+        case "3":
+            clock()
+        case "4":
+            simple_calc()
+        case "5":
+            percent_calc()
+        case "6":
+            print(">>> Desligando o sistema <<<")
+            time.sleep(3)
+            exit()
+
 
 while True:
     home()
